@@ -1,7 +1,7 @@
 <template>
   <div class="all">
       <navbar title="收货地址" :showarrow="true" :menuColor="false"/>
-      <div class="top">
+      <div class="top" v-for="item in list">
          <div class="content">
           <div class="left">
               <div class="title">
@@ -28,12 +28,25 @@
 export default {
 data(){
     return{
-
+         list:''
     }
+},
+mounted(){
+  this.showAdd()
 },
 methods:{
     goAddress(){
         this.$router.push('/addList')
+    },
+    showAdd(){
+        let params={
+            add: this.$store.state.id
+        }
+        this.$http.post(this.$api.getAdd,params).then(data=>{
+            if(data.data.status===0){
+               this.list=data.data.data
+            }
+        })
     }
 }
 }
