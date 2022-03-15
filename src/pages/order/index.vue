@@ -2,7 +2,7 @@
   <div class="all">
      <navbar title="订单" :showarrow="false" :menuColor="true"></navbar>
      <div class="nav">
-       <div class="content"> 
+       <div class="content" v-for="item in lists"> 
          <div class="top">
            <div class="top_left">
            <img src="./10.jpg">
@@ -41,7 +41,8 @@ export default {
   data(){
     return{
         show:false,
-        list:[1,1,1,1,1]
+        list:[1,1,1,1,1],
+        lists:[1,1,1,1,1,1,1,1,1,1,11,1,1]
     }
   },
   methods:{

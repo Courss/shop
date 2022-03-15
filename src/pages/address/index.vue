@@ -5,14 +5,14 @@
          <div class="content">
           <div class="left">
               <div class="title">
-                <span>光谷软件园</span>
+                <span>{{item.detAdd}}</span>
               </div>
               <div class="name">
-                  <span>张文婷(女士)</span>
-                  <span>159****9034</span>
+                  <span>{{item.name}}</span>
+                  <span>{{item.phone}}</span>
               </div>
           </div>
-          <div class="right">
+          <div class="right" @click="">
               <i class="el-icon-edit-outline"></i>
           </div>
       </div>  
@@ -36,11 +36,15 @@ mounted(){
 },
 methods:{
     goAddress(){
+        if(!this.$store.state.id){
+            this.$router.push('/login')
+            return
+        }
         this.$router.push('/addList')
     },
     showAdd(){
         let params={
-            add: this.$store.state.id
+            num: this.$store.state.id
         }
         this.$http.post(this.$api.getAdd,params).then(data=>{
             if(data.data.status===0){

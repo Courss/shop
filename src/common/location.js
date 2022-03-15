@@ -1,6 +1,6 @@
 /**
  * 高德地图定位
- * @type {{}}
+ * 
  */
  export const location =  {
     initMap(id){

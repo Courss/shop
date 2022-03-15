@@ -30,12 +30,9 @@
 }
 
 .miste-content-wrapper {
-  overflow: auto;
-  position: fixed;
   top: 45px;
   bottom: 46px;
   width: 100%;
-  touch-action: none;
 }
 
 .msite_nav {

@@ -3,7 +3,7 @@
    <navbar title="搜索" :showarrow="false" :menuColor="true"></navbar>
    <form action="#" class="search_form">
       <input type="search" name="search" class="search_input" placeholder="请输入商家或美食名称" >
-      <input type="submit" name="submit" class="search_submit">
+      <input type="submit" name="提交" value="搜索" class="search_submit">
       </form>
   </div>
 </template>

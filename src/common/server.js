@@ -17,7 +17,7 @@ let http = axios.create({
    http.interceptors.request.use(config=>{
      if(localStorage.getItem("token")){
       const token=localStorage.getItem("token").replace(/\"/g, "") 
-      if(token&&config.method==='get'){
+      if(token){
        config.headers["Authorization"]="Bearer "+token
      }
      }
