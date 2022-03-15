@@ -1,0 +1,66 @@
+.top{
+    width: 88%;
+    height:40px;
+    margin-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+img{
+    width: 20px;
+    height: 20px;
+}
+.title{
+    width: 88%;
+    height: 40px;
+    margin: 0 auto;
+    line-height: 40px;
+    font-size: 22px;
+}
+.content{
+    width: 88%;
+    margin: 0 auto;
+}
+.content{
+    margin-top: 30px;
+}
+.two{
+    position: relative;
+}
+.two i{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+input{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #e8e8e8;
+    outline:none;
+}
+.login{
+    width: 88%;
+    height: 40px;
+    border-radius: 20px;
+    background: #e8e8e8;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.regist{
+    width: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #409EFF;
+}
+.bottom{
+    position: fixed;
+    bottom: 20px;
+    width: 88%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 14px;
+}

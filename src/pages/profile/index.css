@@ -1,0 +1,101 @@
+.content{
+   width: 100%;
+   background-color: #76c3ec;
+   height: 80px;
+   color: #ffffff;
+}
+.take{
+   width: 90%;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   padding-top: 10px;
+}
+.icon-person{
+   width: 50px;
+   height: 50px;
+}
+.txt{
+   margin-left: 20px;
+}
+ .profile_info_data{
+        border-bottom: 1px solid #e4e4e4;
+        width: 100%;
+        background: #fff;
+        overflow: hidden;
+      }
+      .info_data_link{
+        float: left;
+        width: 33%;
+        text-align: center;
+        border-right: 1px solid #f1f1f1; 
+      }
+      .info_data_top{
+          display: block;
+        width: 100%;
+        font-size: 13px;
+        color: #333;
+        padding: 12px 5px 8px;  
+      }
+      
+      .num{
+          display: inline-block;
+        font-size: 20px;
+        line-height: 30px; 
+      }
+       
+      .info_data_bottom{
+       display: inline-block;
+        font-size: 14px;
+        color: #666;
+        font-weight: 600;
+        padding-bottom: 10px;   
+      }
+        
+      .profile_my_order{
+            margin-top: 10px;
+        background: #fff;
+      }
+      
+      .my_order{
+            display: flex;
+        align-items: center;
+        padding-left: 15px; 
+      }
+     
+      .my_order >span{
+           display: flex;
+          align-items: center;
+          width: 20px;
+          height: 20px;  
+        }
+         
+        .my_order  >.icon{
+            margin-left: -5px;
+        }
+            
+        .my_order_div{
+            width: 100%;
+           border-bottom: 1px solid #f1f1f1;
+           padding: 18px 10px 18px 0;
+           font-size: 16px;
+           color: #333;
+           margin-left: 10px;
+           display: flex;
+           justify-content: space-between; 
+        }
+          
+           span{
+            display: block;   
+           }
+            
+          .my_order_icon{
+              width: 10px;
+            height: 10px; 
+          }
+           
+          .icon-jinrujiantou{
+           color: #bbb;
+            font-size: 15px;   
+          }
+            
