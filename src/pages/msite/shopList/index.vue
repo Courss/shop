@@ -39,12 +39,11 @@ export default {
       this.$http.post(this.$api.orders).then(data=>{
         if(data.data){
           this.list=data.data.data
-          console.log(this.url+this.list[0].pic)
         }
       })
    },
    toShop(){
-
+    this.$router.push('/shop')
    }
   }
 }
@@ -54,8 +53,7 @@ export default {
 .nav{
     background: #f2f2f2;
     width: 100%;
-    height: 100%;
-    cursor: default;
+    padding-bottom: 50px;
   }
    .all{
     width: 93%;

@@ -9,6 +9,10 @@ import regist from '../pages/regist/index.vue'
 import set from '../pages/set/index'
 import address from '../pages/address/index'
 import addList from '../pages/addList/index'
+import shop from '../pages/shop/index'
+import ShopGoods from '../pages/Shop/goods/index.vue'
+import ShopRatings from '../pages/Shop/rate/index.vue'
+import ShopInfo from '../pages/Shop/info/index.vue'
 
 
 Vue.use(Router)
@@ -66,6 +70,28 @@ export default new Router({
 {
   path:'/addList',
   component: addList,
+},
+{
+  path:'/shop',
+  component: shop,
+  children:[
+    {
+      path: '/shop/goods',
+      component: ShopGoods
+    },
+    {
+      path: '/shop/rate',
+      component: ShopRatings
+    },
+    {
+      path: '/shop/info',
+      component: ShopInfo
+    },
+    {
+      path: '',
+      redirect: '/shop/goods'
+    },
+  ]
 },
   ]
 })

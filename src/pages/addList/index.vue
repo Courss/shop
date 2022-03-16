@@ -51,7 +51,6 @@ export default {
       });
     },
     save(){
-        console.log(this.priAdd,this.detAdd,this.name,this.phone)
         if(!this.priAdd||!this.detAdd||!this.name||!this.phone){
             this.$message({
                 message:'请填写完整信息',
