@@ -10,88 +10,71 @@ import set from '../pages/set/index'
 import address from '../pages/address/index'
 import addList from '../pages/addList/index'
 import shop from '../pages/shop/index'
-import ShopGoods from '../pages/Shop/goods/index.vue'
-import ShopRatings from '../pages/Shop/rate/index.vue'
-import ShopInfo from '../pages/Shop/info/index.vue'
+import payorder from '../pages/payorder/index'
 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-      {
-        path:'/msite',
-        component: msite,
-        meta:{
-          showFooter:true
-        }
-      },
-      {
-        path:'/order',
-        component: order,
-        meta:{
-          showFooter:true
-        }
-      },
-      {
-        path:'/profile',
-        component: profile,
-        meta:{
-          showFooter:true
-        }
-      },
-      {
-        path:'/search',
-        component: search,
-        meta:{
-          showFooter:true
-        }
-      },
-        {
-            path:'/',
-            redirect: '/msite'
-        },
-        {
-          path:'/login',
-          component: login,
-      },
-      {
-        path:'/regist',
-        component: regist,
+    {
+      path: '/msite',
+      component: msite,
+      meta: {
+        showFooter: true
+      }
     },
     {
-      path:'/set',
+      path: '/order',
+      component: order,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/profile',
+      component: profile,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/search',
+      component: search,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
+      path: '/',
+      redirect: '/msite'
+    },
+    {
+      path: '/login',
+      component: login,
+    },
+    {
+      path: '/regist',
+      component: regist,
+    },
+    {
+      path: '/set',
       component: set,
-  },
-  {
-    path:'/address',
-    component: address,
-},
-{
-  path:'/addList',
-  component: addList,
-},
-{
-  path:'/shop',
-  component: shop,
-  children:[
-    {
-      path: '/shop/goods',
-      component: ShopGoods
     },
     {
-      path: '/shop/rate',
-      component: ShopRatings
+      path: '/address',
+      component: address,
     },
     {
-      path: '/shop/info',
-      component: ShopInfo
+      path: '/addList',
+      component: addList,
     },
     {
-      path: '',
-      redirect: '/shop/goods'
+      path: '/shop',
+      component: shop,
+    }, {
+      path: '/payorder',
+      component: payorder,
     },
-  ]
-},
   ]
 })

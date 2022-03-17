@@ -1,6 +1,6 @@
 <template>
   <div>
-      <span>qqqqqqq</span>
+      <div class="nav"><img src="../img/nav.jpg" alt=""></div>
   </div>
 </template>
 
@@ -9,5 +9,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+  .nav{
+    width: 99%;
+    margin: 0 auto;
+  }
+  .nav img{
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+  }
 </style>

@@ -1,0 +1,107 @@
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.rate span{
+    color: #fd7404;
+    font-size: 23px;
+}
+.rates{
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: #ababab;
+    margin-left: 6px;
+    margin-top: 6px;
+    line-height: 12px;
+}
+.right{
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+}
+.first{
+    width: 32px;
+    text-align: center;
+}
+.second{
+    width: 32px;
+    text-align: center;
+}
+.thrid{
+    width: 65px;
+    text-align: center;
+}
+.txt{
+    color: #ababab;
+}
+.rating{
+    font-size: 13px;
+    font-weight: 600;
+}
+.wrap{
+    padding-bottom: 8px;
+   border-bottom: 1px solid #ebebeb;
+}
+.wrap_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.wrap_left img{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+.wrap_left{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.wrap_right{
+    font-size: 11px;
+    color: #ababab;
+}
+.nav{
+    font-size: 11px;
+    color: #ababab;
+    display: flex;
+}
+.nava{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+/deep/ .el-rate__icon{
+    font-size: 11px;
+    margin-right: 0;
+  }
+  /deep/.el-rate{
+      line-height: 0;
+  }
+  .says{
+   font-size: 13px;
+   letter-spacing: 1px;
+   line-height: 20px;
+  }
+  .comment img{
+   width: 140px;
+   height: 140px;
+   border-radius: 3px;
+  }
+  .aui{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .aui img{
+      width: 12px;
+      height: 12px;
+      margin-right: 3px;
+  }
+  .aui span{
+      font-size: 12px; 
+  }
