@@ -10,6 +10,11 @@
         <div class="three"><input :type="type" placeholder="再次输入密码" v-model="words">
         <i class="el-icon-view" @click="toShow"></i></div>
       </div>
+      <el-form ref="form" :model="form">
+      <el-form-item label="验证" prop="isLock" class="verify">
+        <slider-verify-code v-model="form.isLock" @change="handlerLock"></slider-verify-code>
+      </el-form-item>
+      </el-form>
       <el-button :plain="true" class="login" @click="loginTo" :style="{background: (this.name&&this.word&&this.words? '#409EFF':'#e8e8e8'),color: (this.name&&this.word&&this.words? '#ffffff':'#333333')}">注册</el-button>
       <div class="bottom">
         <el-radio v-model="radio" label="1">
@@ -20,17 +25,31 @@
 </template>
 
 <script>
+import slide from '../../components/slide-verify/index.vue'
 export default {
    data(){
+      const checkStatus = (value) => {
+      if (!value) {
+        this.$message({  message: '请拖动滑块完成验证',type: 'warning'})
+        return 0
+      }
+    };
        return{
+          form:{},
           radio: '1',
           name:'',
           word:'',
           words:'',
           show: false,
-          type: 'password'
+          type: 'password',
+           isLock: [
+          {validator: checkStatus, trigger: 'blur'},
+            ],
        }
    },
+    components:{
+     'slider-verify-code': slide
+    },
    methods:{
        loginTo(){
            if(!this.name&&!this.word&&!this.words){
@@ -54,7 +73,10 @@ export default {
                 })
                 return
            }
-           console.log(111)
+             if(!this.flag){
+             this.$message({  message: '请拖动滑块完成验证',type: 'warning'})
+             return
+           }
           let params={
               username:this.name,
               password:this.word
@@ -72,6 +94,12 @@ export default {
                 })
               }
           })
+       },
+        handlerLock(data){
+         if (data) {
+           this.flag=data
+        this.$refs.form.validateField('isLock');
+      }
        },
        toShow(){
           this.type='text'

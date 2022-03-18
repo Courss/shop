@@ -1,6 +1,9 @@
 <template>
   <div>
       <div class="nav"><img src="../img/nav.jpg" alt=""></div>
+      <div>
+        
+      </div>
   </div>
 </template>
 

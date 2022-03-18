@@ -11,6 +11,11 @@
           <i class="el-icon-view" @click="toShow"></i>
         </div>
       </div>
+      <el-form ref="form" :model="form">
+      <el-form-item label="验证" prop="isLock" class="verify">
+        <slider-verify-code v-model="form.isLock" @change="handlerLock"></slider-verify-code>
+      </el-form-item>
+      </el-form>
       <el-button class="login" @click="loginTo" :style="{background: (this.name&&this.word? '#409EFF':'#e8e8e8'),color: (this.name&&this.word? '#ffffff':'#333333')}">登录</el-button>
       <div class="regist" @click="goitem">注册</div>
       <div class="bottom">
@@ -22,21 +27,35 @@
 </template>
 
 <script>
+import slide from '../../components/slide-verify/index.vue'
 export default {
     data(){
+      const checkStatus = (value) => {
+      if (!value) {
+        this.$message({  message: '请拖动滑块完成验证',type: 'warning'})
+        return 0
+      }
+    };
         return{
+            form:{},
             radio: '1',
             name:'',
             word:'',
-            type: 'password'
+            type: 'password',
+            flag: false,
+            isLock: [
+          {validator: checkStatus, trigger: 'blur'},
+            ],
         }
+    },
+    components:{
+     'slider-verify-code': slide
     },
     methods:{
          toShow(){
           this.type='text'
        },
          loginTo(){
-           console.log(111)
            if(!this.name&&!this.word){
                this.$message({
                   message: '请输入用户名或密码',
@@ -51,7 +70,11 @@ export default {
                 })
                 return
            }
-          let params={
+           if(!this.flag){
+             this.$message({  message: '请拖动滑块完成验证',type: 'warning'})
+             return
+           }
+             let params={
               username:this.name,
               password:this.word
           }
@@ -68,6 +91,16 @@ export default {
                 })
               }
           })
+       },
+       message(data){
+           this.text=data
+           consoel.log(this.text)
+       },
+       handlerLock(data){
+         if (data) {
+           this.flag=data
+        this.$refs.form.validateField('isLock');
+      }
        },
         gopage(){
           this.$router.go(-1)

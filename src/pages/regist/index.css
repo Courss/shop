@@ -19,12 +19,14 @@ img{
     line-height: 40px;
     font-size: 22px;
 }
+.verify{
+    width: 88%;
+    margin: 10px auto;
+}
 .content{
     width: 88%;
     margin: 0 auto;
-}
-.content{
-    margin-top: 30px;
+      margin-top: 30px;
 }
 input{
     width: 100%;

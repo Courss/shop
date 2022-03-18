@@ -22,9 +22,11 @@ img{
 .content{
     width: 88%;
     margin: 0 auto;
+     margin-top: 30px;
 }
-.content{
-    margin-top: 30px;
+.verify{
+    width: 88%;
+    margin: 10px auto;
 }
 .two{
     position: relative;
