@@ -1,0 +1,73 @@
+.nav{
+    width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+.content{
+    width: 95%;
+    margin: 0 auto;
+}
+.top{
+    color: #a2a2a2;
+    font-size: 15px;
+}
+.msg{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.left{
+    display: flex;
+}
+.left img{
+   width: 50px;
+   height: 50px;
+   border-radius: 5px;
+}
+.left_t{
+    margin-left: 5px;
+}
+.left_f{
+    font-size: 13px;
+    margin-top: 2px;
+}
+.left_s{
+    color: #999999;
+    font-size: 13px;
+    margin-top: 7px;
+}
+.left_o{
+    color: #999999;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.right{
+    font-size: 14px;
+    margin-top: 15px;
+}
+.right_f{
+    font-size: 10px;
+}
+.first{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.redbag img{
+    width: 17px;
+    height: 15px;
+}
+.price{
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+.price_s{
+    font-size: 18px;
+}

@@ -1,0 +1,41 @@
+.nav{
+    background: #fff;
+    width: 95%;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.top{
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+.first{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.first_txt span{
+   font-size: 17px;
+   font-weight: 600;
+}
+.first_text{
+    font-size: 13px;
+    color: #555555;
+    margin-top: 10px;
+}
+.first i{
+    font-size: 18px;
+}
+.second{
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.second_r{
+    color: #0cb2fe;
+}
+.second_c{
+    display: flex;
+}
