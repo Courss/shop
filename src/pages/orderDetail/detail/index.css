@@ -1,17 +1,14 @@
 .nav{
     width: 95%;
     margin: 0 auto;
-    background-color: #fff;
     margin-top: 10px;
-    border-radius: 5px;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 .content{
     width: 95%;
     margin: 0 auto;
 }
 .top{
-    color: #a2a2a2;
     font-size: 15px;
 }
 .msg{
@@ -73,4 +70,10 @@
 }
 .nobag{
     font-size: 13px;
+}
+.second{
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
 }

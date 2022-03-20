@@ -11,7 +11,9 @@ import address from '../pages/address/index'
 import addList from '../pages/addList/index'
 import shop from '../pages/shop/index'
 import payorder from '../pages/payorder/index'
-
+import orderDetail from '../pages/orderDetail/index'
+import collection from '../pages/collection/index'
+import vipcard from '../pages/vipcard/index'
 
 Vue.use(Router)
 
@@ -72,9 +74,22 @@ export default new Router({
     {
       path: '/shop',
       component: shop,
-    }, {
+    },
+     {
       path: '/payorder',
       component: payorder,
+    },
+    {
+      path: '/orderDetail',
+      component: orderDetail,
+    },
+    {
+      path: '/collection',
+      component: collection,
+    },
+    {
+      path: '/vipcard',
+      component: vipcard,
     },
   ]
 })

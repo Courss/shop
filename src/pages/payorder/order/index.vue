@@ -21,7 +21,7 @@
           </div>
           <div class="first">
               <div class="first_o"><span>配送费</span></div>
-              <div><span  class="right_f">￥</span><span class="first_s">2</span></div>
+              <div><span  class="right_f">￥</span><span class="first_s">0</span></div>
           </div>
           <div class="first">
               <div class="redbag">

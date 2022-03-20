@@ -7,12 +7,20 @@
       </div>
       <top></top>
       <order></order>
+      <msg></msg>
+      <div class="btn">
+        <div class="btm">
+          <span class="btv">合计:</span><span class="bts">￥</span><span class="btb">22.8</span>
+          <div class="btc">提交订单</div>
+        </div>
+      </div>
   </div>
 </template>
 
 <script>
 import top from './top/index.vue'
 import order from './order/index.vue'
+import msg from './msg/index.vue'
 export default {
   data(){
     return{
@@ -21,35 +29,12 @@ export default {
   },
   components:{
     top,
-    order
+    order,
+    msg
   }
 }
 </script>
 
 <style scoped>
-.all{
-  width: 100%;
-  height: 100%;
-  background: #f2f2f2;
-}
-.top{
-  width: 95%;
-  margin: 0 auto;
-  background: #fef3c6;
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  padding: 8px 0;
-  border-radius: 10px;
-  color: #ec9a3d;
-}
-.top img{
-  width: 14px;
-  height: 14px;
-  margin-left: 10px;
-  margin-top: 2px;
-}
-.top span{
-  margin-left: 5px;
-}
+@import url('./index.css');
 </style>

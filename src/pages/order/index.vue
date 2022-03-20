@@ -2,7 +2,7 @@
   <div class="all">
      <navbar title="订单" :showarrow="false" :menuColor="true"></navbar>
      <div class="nav">
-       <div class="content" v-for="item in lists"> 
+       <div class="content"> 
          <div class="top">
            <div class="top_left">
            <img src="./10.jpg">
@@ -13,7 +13,7 @@
             <span>已送达</span>
           </div>
          </div>
-         <div class="medium">
+         <div class="medium" @click="toDetail">
            <div class="medium_left">
              <img v-for="item in list" src="./10.jpg" alt="">
            </div>
@@ -48,6 +48,9 @@ export default {
   methods:{
     gologin(){
       this.$router.push('login')
+    },
+    toDetail(){
+      this.$router.push('/orderDetail')
     }
   }
 }
