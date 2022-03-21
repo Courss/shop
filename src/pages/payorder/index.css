@@ -58,3 +58,6 @@
       line-height: 35px;
       margin-left: 10px;
   }
+.el-message-box{
+      width: 200px;
+  }

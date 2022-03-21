@@ -3,7 +3,7 @@
     <div class="top">
       <div class="top-mask"></div>
       <div class="top-icon">
-        <img src="./img/left.png" class="top-back" />
+        <img src="./img/left.png" class="top-back" @click="back" />
         <div class="first" v-if="show">
           <img src="./img/follow.png" @click="showheart" alt="" /><span
             >关注</span
@@ -98,6 +98,9 @@ export default {
     handleClick(tab) {
       this.activeName = tab.name;
     },
+    back(){
+      this.$router.go(-1)
+    }
   },
 };
 </script>

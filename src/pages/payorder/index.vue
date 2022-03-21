@@ -11,7 +11,7 @@
       <div class="btn">
         <div class="btm">
           <span class="btv">合计:</span><span class="bts">￥</span><span class="btb">22.8</span>
-          <div class="btc">提交订单</div>
+          <div class="btc" @click="topay">提交订单</div>
         </div>
       </div>
   </div>
@@ -31,6 +31,19 @@ export default {
     top,
     order,
     msg
+  },
+  methods:{
+    topay(){
+      this.$alert('这是一段内容', '标题名称', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        })
+    }
   }
 }
 </script>

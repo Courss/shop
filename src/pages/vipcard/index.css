@@ -1,0 +1,119 @@
+
+.all{
+    background: #f2f2f2;
+    width: 100%;
+    height: 100%;
+}
+.order{
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.nav{
+    background: url('./img/2.jpg') no-repeat;
+    width: 93%;
+    margin: 0 auto;
+    height: 185px;
+    border-radius: 10px;
+    background-size: 100% 100%;
+    margin-top: 10px;
+}
+.mav{
+    background: url('./img/1.jpg') no-repeat;
+    width: 93%;
+    margin: 0 auto;
+    height: 185px;
+    border-radius: 10px;
+    background-size: 100% 100%;
+    margin-top: 10px;
+    position: relative;
+}
+.card{
+    width: 200px;
+    margin-left: 14px;
+    padding-top: 50px;
+    line-height: 22px;
+}
+.first span{
+    color: #7d6964;
+    font-weight: bold;
+    font-size: 15px;
+}
+.second span{
+    color: #e8c09b;
+    font-size: 28px;
+    font-weight: bold;
+}
+.third span{
+    color: #7a6a5d;
+    font-size: 13px;
+}
+.fouth{
+    margin-top: 30px;
+    color: #7a6a5d;
+    font-size: 13px;
+}
+.content{
+    width: 100%;
+    padding-bottom: 20px;
+}
+.txt{
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+}
+.coup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 93%;
+    margin: 0 auto;
+}
+.dev{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+}
+.dev img{
+    width: 70px;
+    height: 55px;
+}
+.devc{
+    color: #555555;
+    margin-top: 4px;
+}
+.kre{
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+    margin-left: 4px;
+    color: #fff;
+}
+.spc{
+    width: 93%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    line-height: 18px;
+}
+.left img{
+    width: 130px;
+    height: 30px;
+}
+.right{
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #cb9044;
+    border-radius: 10px;
+    color: #fff;
+}
