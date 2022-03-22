@@ -12,7 +12,7 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="javascript:" class="link_to_food">
+            <a href="javascript:" class="link_to_food" @click="class">
             <div class="food_container">
               <img src="./image/饮料.png" alt="">
             </div>
@@ -157,6 +157,9 @@ export default {
     go(){
       console.log(111)
      this.$router.push('/login')
+    },
+    class(){
+      this.$router.push('')
     }
   }
 }
