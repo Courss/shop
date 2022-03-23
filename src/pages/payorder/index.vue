@@ -14,6 +14,13 @@
           <div class="btc" @click="topay">提交订单</div>
         </div>
       </div>
+      <div class="pop" v-if="sec">
+          <div class="pop_t"><span>确认支付吗</span></div>
+          <div class="pop_b">
+              <div class="pop_l"><span>取消</span></div>
+              <div class="pop_r" @click="pay"><span>确定</span></div>
+          </div>
+      </div>
   </div>
 </template>
 
@@ -24,7 +31,7 @@ import msg from './msg/index.vue'
 export default {
   data(){
     return{
-
+      sec:false
     }
   },
   components:{
@@ -34,15 +41,10 @@ export default {
   },
   methods:{
     topay(){
-      this.$alert('这是一段内容', '标题名称', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
-            });
-          }
-        })
+       this.sec=true
+    },
+    pay(){
+      this.sec=false
     }
   }
 }

@@ -23,8 +23,8 @@
              </div>
          </div>
          <div class="bottom">
-           <div class="comment">去评价</div>
-           <div class="again">删除订单</div>
+           <div class="comment" @click="tocom">去评价</div>
+           <div class="again" @click="delet">删除订单</div>
          </div>
        </div>
      </div>
@@ -32,6 +32,13 @@
         <img src="./image/person.png" alt="">
         <h3>登录后查看外卖订单</h3>
         <button @click="gologin">立即登录</button>
+      </div>
+       <div class="pop" v-if="sec">
+          <div class="pop_t"><span>确认删除订单吗</span></div>
+          <div class="pop_b">
+              <div class="pop_l"><span>取消</span></div>
+              <div class="pop_r" @click="tovip"><span>确定</span></div>
+          </div>
       </div>
   </div>
 </template>
@@ -42,7 +49,8 @@ export default {
     return{
         show:false,
         list:[1,1,1,1,1],
-        lists:[1,1,1,1,1,1,1,1,1,1,11,1,1]
+        lists:[1,1,1,1,1,1,1,1,1,1,11,1,1],
+        sec:false
     }
   },
   methods:{
@@ -51,6 +59,12 @@ export default {
     },
     toDetail(){
       this.$router.push('/orderDetail')
+    },
+    tocom(){
+      this.$router.push('/comment')
+    },
+    delet(){
+      this.sec=true
     }
   }
 }

@@ -34,6 +34,13 @@
               <span>小计</span><span>￥</span><span class="price_s">22.8</span>
           </div>
       </div>
+       <div class="pop" v-if="sec">
+          <div class="pop_t"><span>是否支付吗</span></div>
+          <div class="pop_b">
+              <div class="pop_l"><span>取消</span></div>
+              <div class="pop_r" @click="tovip"><span>确定</span></div>
+          </div>
+      </div>
   </div>
 </template>
 

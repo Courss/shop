@@ -14,6 +14,7 @@ import payorder from '../pages/payorder/index'
 import orderDetail from '../pages/orderDetail/index'
 import collection from '../pages/collection/index'
 import vipcard from '../pages/vipcard/index'
+import comment from '../pages/comment/index'
 
 Vue.use(Router)
 
@@ -90,6 +91,10 @@ export default new Router({
     {
       path: '/vipcard',
       component: vipcard,
+    },
+    {
+      path: '/comment',
+      component: comment,
     },
   ]
 })

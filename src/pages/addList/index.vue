@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { location } from "../../common/location.js"
+import  {location}  from "../../common/location.js";
 export default {
   data(){
       return{
@@ -42,18 +42,15 @@ export default {
       }
   },
   mounted(){
-      this.getLocation()
+      this.getLocation();
   },
   methods:{
        getLocation() {
-        let _that = this
-        let geolocation = location.initMap('map-container') // 定位
-        AMap.event.addListener(geolocation, 'complete', result => {
-          console.log(result)
-          _that.lat = result.position.lat
-          _that.lng = result.position.lng
-          _that.location = result.formattedAddress
-        })
+      let _that = this;
+      let geolocation = location.initMap("map-container"); //定位
+      AMap.event.addListener(geolocation, "complete", result => {
+        console.log(result)
+      });
     },
     save(){
         if(!this.priAdd||!this.detAdd||!this.name||!this.phone){
