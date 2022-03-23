@@ -19,7 +19,7 @@
     </div>
     <div class="bottom" @click="goAddress">
         <i class="el-icon-circle-plus-outline"></i>
-        <span>新增标签</span>
+        <span>新增地址</span>
     </div>
   </div>
 </template>

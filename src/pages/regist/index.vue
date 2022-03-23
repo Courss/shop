@@ -5,7 +5,7 @@
       </div>
       <div class="title">注册</div>
       <div class="content">
-        <input type="text" placeholder="手机/用户名" v-model="name">
+        <input type="text" placeholder="用户名" v-model="name">
          <input :type="type" placeholder="密码" v-model="word">
         <div class="three"><input :type="type" placeholder="再次输入密码" v-model="words">
         <i class="el-icon-view" @click="toShow"></i></div>

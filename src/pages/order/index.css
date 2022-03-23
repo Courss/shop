@@ -84,6 +84,8 @@
         flex-direction: column;
     }
     .num{
+        margin-left: 20px;
+        margin-top: 5px;
         font-size: 13px;
     }
     .price{

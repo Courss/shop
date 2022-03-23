@@ -12,7 +12,7 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="javascript:" class="link_to_food" @click="class">
+            <a href="javascript:" class="link_to_food">
             <div class="food_container">
               <img src="./image/饮料.png" alt="">
             </div>

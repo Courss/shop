@@ -5,8 +5,8 @@
        <div class="content"> 
          <div class="top">
            <div class="top_left">
-           <img src="./10.jpg">
-           <span>韩式炸鸡(文理学院店)</span>
+           <img src="./image/1.jpg">
+           <span>派乐汉堡(文理学院店)</span>
            <i class="iconfont icon-jinrujiantou"></i>
            </div>
           <div class="top_right">
@@ -15,7 +15,7 @@
          </div>
          <div class="medium" @click="toDetail">
            <div class="medium_left">
-             <img v-for="item in list" src="./10.jpg" alt="">
+             <img src="./image/slide1.1.jpg" alt="">
            </div>
            <div class="medium_right">
              <div class="price"><span>￥13.96</span></div>

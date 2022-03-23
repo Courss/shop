@@ -96,6 +96,7 @@
   .aui{
     display: flex;
     justify-content: flex-end;
+    margin-top: 8px;
   }
   .aui img{
       width: 12px;

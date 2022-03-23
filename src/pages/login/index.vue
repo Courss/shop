@@ -5,7 +5,7 @@
       </div>
       <div class="title">密码登录</div>
       <div class="content">
-        <input type="text" placeholder="手机/用户名" v-model="name">
+        <input type="text" placeholder="用户名" v-model="name">
         <div class="two">
          <input :type="type" placeholder="密码" v-model="word">   
           <i class="el-icon-view" @click="toShow"></i>

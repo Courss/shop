@@ -6,11 +6,11 @@
           <div class="card">
               <div class="top">
                   <div class="first"><span>可用红包</span></div>
-                  <div class="second"><span>0</span></div>
-                  <div class="third"><span>续费每月得四张</span></div>
+                  <div class="second"><span>6</span></div>
+                  <div class="third"><span>续费每月得六张</span></div>
               </div>
               <div class="fouth">
-                  <span>2022.04.11到期</span><span class="spec">去续费</span>
+                  <span>2022.04.11到期</span><span style="color:#fff" class="spec">去续费</span>
               </div>
           </div>
       </div>
@@ -40,7 +40,7 @@
           </div>
       </div> 
       </div>
-      <div class="order">
+      <div class="order" v-if="!show">
         <div class="mav">
             <div class="kre">
                 <span>开通超级吃货卡享六张无门槛优惠劵</span>
@@ -51,8 +51,15 @@
                     <img src="./img/7.jpg" alt="">
                     <span>每月得6张无门槛红包</span>
                 </div>
-                <div class="right"><span>￥10开通</span></div>
+                <div class="right" @click="topay"><span>￥10开通</span></div>
             </div>
+      </div>
+      <div class="pop" v-if="sec">
+          <div class="pop_t"><span>是否支付吗</span></div>
+          <div class="pop_b">
+              <div class="pop_l"><span>取消</span></div>
+              <div class="pop_r" @click="tovip"><span>确定</span></div>
+          </div>
       </div>
   </div>
 </template>
@@ -61,8 +68,18 @@
 export default {
     data(){
         return{
-           show:false 
+           show:false,
+           sec:false
         }
+    },
+    methods:{
+        topay(){
+          this.sec=true
+        },
+        tovip(){
+            this.show=true
+            this.sec=false
+        },
     }
 }
 </script>

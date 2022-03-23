@@ -1,6 +1,7 @@
 <template>
   <div class="all">
       <navbar title="新增收货地址" :showarrow="true" :menuColor="false"></navbar>
+      <div><img style="width:20px;height:20px;position:absolute;right:10px;top:15px" src="./img/删除.png" alt=""></div>
       <div class="top">
           <div class="content">
               <div class="locat">
@@ -45,10 +46,14 @@ export default {
   },
   methods:{
        getLocation() {
-      let geolocation = location.initMap("map-container"); //定位
-      AMap.event.addListener(geolocation, "complete", result => {
-         this.priAdd=result.addressComponent.province+result.addressComponent.province+result.addressComponent.district
-      });
+        let _that = this
+        let geolocation = location.initMap('map-container') // 定位
+        AMap.event.addListener(geolocation, 'complete', result => {
+          console.log(result)
+          _that.lat = result.position.lat
+          _that.lng = result.position.lng
+          _that.location = result.formattedAddress
+        })
     },
     save(){
         if(!this.priAdd||!this.detAdd||!this.name||!this.phone){

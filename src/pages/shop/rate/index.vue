@@ -19,9 +19,9 @@
           <div class="thrid"><span class="txt">配送满意度</span><span class="rating">96%</span></div>
         </div>
     </div>
-    <div class="wrap" v-for="item in list">
+    <div class="wrap">
       <div class="wrap_top">
-        <div class="wrap_left"><img src="./img/1.jpg" alt=""><span>用户</span></div>
+        <div class="wrap_left"><img src="./img/tou.png" alt=""><span>用户</span></div>
         <div class="wrap_right"><span>2022-03-14</span></div>
       </div>
       <div class="nav">
@@ -32,9 +32,8 @@
         <div class="nava"><span>骑士超赞</span></div>
       </div>
       <div class="says">
-        <span>留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</span>
+        <span>测试测试测试测试测试测试测试测试测试测试测试测试</span>
       </div>
-      <div class="comment"><img src="./img/1.jpg" alt=""></div>
       <div class="aui"><img src="./img/bang.png" alt="" @click="show" v-if="flag"><img src="./img/zan.png" alt="" @click="show" v-if="!flag"><span>有用</span></div>
     </div>
   </div>
