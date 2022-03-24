@@ -1,7 +1,7 @@
 <template>
   <div class="all">
       <navbar title="新增收货地址" :showarrow="true" :menuColor="false"></navbar>
-      <div><img style="width:20px;height:20px;position:absolute;right:10px;top:15px" src="./img/删除.png" alt=""></div>
+      <div><img @click="del" style="width:20px;height:20px;position:absolute;right:10px;top:15px" src="./img/删除.png" alt=""></div>
       <div class="top">
           <div class="content">
               <div class="locat">
@@ -14,7 +14,7 @@
              </div>
              <div class="detail"> 
                  <span>详细地址</span>
-                 <input type="text" placeholder="填写详细地址，例:1层101" v-model="detAdd">
+                 <input type="text" placeholder="填写详细地址，例:xx街xx小区" v-model="detAdd">
              </div>
              <div class="detail">
                  <span>收货人</span>
@@ -27,18 +27,26 @@
           </div>
           <div class="bottom" @click="save">保存地址</div>
       </div>
+      <div class="pop" v-if="show">
+          <div class="pop_t"><span>确认删除吗</span></div>
+          <div class="pop_b">
+              <div class="pop_l"><span>取消</span></div>
+              <div class="pop_r" @click="dele"><span>确定</span></div>
+          </div>
+      </div>
   </div>
 </template>
 
 <script>
-import  {location}  from "../../common/location.js";
+import  {location}  from "../../common/location";
 export default {
   data(){
       return{
         priAdd:'',
         detAdd:'',
         name:'',
-        phone:''
+        phone:'',
+        show: false
       }
   },
   mounted(){
@@ -49,7 +57,7 @@ export default {
       let _that = this;
       let geolocation = location.initMap("map-container"); //定位
       AMap.event.addListener(geolocation, "complete", result => {
-        console.log(result)
+        this.priAdd=result.addressComponent.province+result.addressComponent.city+result.addressComponent.district
       });
     },
     save(){
@@ -71,6 +79,12 @@ export default {
                 this.$router.push('/address')
             }
         })
+    },
+    del(){
+        this.show=true
+    },
+    dele(){
+        this.show=false
     }
   }
 }

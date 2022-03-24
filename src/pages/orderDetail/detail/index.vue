@@ -34,7 +34,7 @@
               <span>小计</span><span>￥</span><span class="price_s">22.8</span>
           </div>   
           <div class="bottom">
-              <div class="second" style="line-height: 15px;">
+              <div class="second" style="line-height: 15px;margin-top:10px">
                   <span>收货信息</span>
                   <span style="width: 193px;text-align: right;">中建大公馆一期a2栋二单元2902张文婷 15926369034</span>
               </div>
@@ -57,10 +57,6 @@
               <div class="second">
                   <span>配送方式</span>
                   <span>蜂鸟快送</span>
-              </div>
-              <div class="second">
-                  <span>配送骑士</span>
-                  <span>李孟修</span>
               </div>
               <div class="second">
                   <span>支付方式</span>
