@@ -1,7 +1,7 @@
 <template>
 <div>
 <div class="nav">
-     <div class="all" v-for="(item,index) in list" :key="index" @click="toShop">
+     <div class="all" v-for="(item,index) in list" :key="index" @click="toShop(item)">
       <div class="content">
          <div class="left"><img :src="url+item.pic"></div>
       <div class="right">
@@ -42,8 +42,13 @@ export default {
         }
       })
    },
-   toShop(){
-    this.$router.push('/shop')
+   toShop(item){
+    this.$router.push({
+       path: '/shop',
+          query: {
+            item: item
+          }
+    })
    }
   }
 }

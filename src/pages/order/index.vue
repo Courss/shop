@@ -1,7 +1,7 @@
 <template>
   <div class="all">
      <navbar title="订单" :showarrow="false" :menuColor="true"></navbar>
-     <div class="nav">
+     <!-- <div class="nav">
        <div class="content"> 
          <div class="top">
            <div class="top_left">
@@ -27,7 +27,7 @@
            <div class="again" @click="delet">删除订单</div>
          </div>
        </div>
-     </div>
+     </div> -->
      <div class="order_no_login" v-if="show">
         <img src="./image/person.png" alt="">
         <h3>登录后查看外卖订单</h3>
@@ -37,7 +37,7 @@
           <div class="pop_t"><span>确认删除订单吗</span></div>
           <div class="pop_b">
               <div class="pop_l"><span>取消</span></div>
-              <div class="pop_r" @click="tovip"><span>确定</span></div>
+              <div class="pop_r" @click="todel"><span>确定</span></div>
           </div>
       </div>
   </div>
@@ -58,11 +58,15 @@ export default {
         this.getorder()
         this.show=false
     }
-    
   },
   methods:{
     getorder(){
-         
+         let params={
+           num: this.$store.state.id
+         }
+         this.$http.post(this.$api.getorder,params).then(data=>{
+
+         })
     },
     gologin(){
       this.$router.push('login')
@@ -75,6 +79,10 @@ export default {
     },
     delet(){
       this.sec=true
+    },
+    todel(){
+      this.sec=false
+
     }
   }
 }
