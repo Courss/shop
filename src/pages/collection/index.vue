@@ -36,13 +36,7 @@ export default {
    this.getOrderList()
   },
   methods:{
-   getOrderList(){
-      this.$http.post(this.$api.orders).then(data=>{
-        if(data.data){
-          this.list=data.data.data
-        }
-      })
-   },
+  
    toShop(){
     this.$router.push('/shop')
    }

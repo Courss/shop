@@ -1,10 +1,10 @@
 <template>
   <div class="all">
       <navbar title="新增收货地址" :showarrow="true" :menuColor="false"></navbar>
-      <div><img @click="del" style="width:20px;height:20px;position:absolute;right:10px;top:15px" src="./img/删除.png" alt=""></div>
+      <div v-if="this.add"><img @click="del" style="width:20px;height:20px;position:absolute;right:10px;top:15px" src="./img/删除.png" alt=""></div>
       <div class="top">
           <div class="content">
-              <div class="locat">
+              <div class="locat" v-if="!this.add">
                   <i class="iconfont icon-dizhiguanli"></i>
                   <span >{{this.priAdd}}</span><span v-if="!this.priAdd">定位中...</span>
               </div>
@@ -30,7 +30,7 @@
       <div class="pop" v-if="show">
           <div class="pop_t"><span>确认删除吗</span></div>
           <div class="pop_b">
-              <div class="pop_l"><span>取消</span></div>
+              <div class="pop_l" @click="can"><span>取消</span></div>
               <div class="pop_r" @click="dele"><span>确定</span></div>
           </div>
       </div>
@@ -46,8 +46,20 @@ export default {
         detAdd:'',
         name:'',
         phone:'',
-        show: false
+        show: false,
+        add:'',
+        id:''
       }
+  },
+  created(){
+     if(this.$route.query.id){
+         this.add=this.$route.query.id
+          this.priAdd=this.add.priAdd
+          this.detAdd=this.add.detAdd
+          this.name=this.add.name
+          this.phone=this.add.phone
+          this.id=this.add.id
+     }
   },
   mounted(){
       this.getLocation();
@@ -67,6 +79,22 @@ export default {
                 type: 'warning'
             })
         }
+        if(this.add){
+            let params={
+             priAdd: this.priAdd,
+             detAdd: this.detAdd,
+             name: this.name,
+             phone: this.phone,
+             nums: this.$store.state.id,
+             id: this.id
+        }
+        this.$http.post(this.$api.cadd,params).then(data=>{
+            if(data.data.status===0){
+                this.$router.push('/address')
+            }
+        })
+        return
+        }
         let params={
              priAdd: this.priAdd,
              detAdd: this.detAdd,
@@ -80,11 +108,22 @@ export default {
             }
         })
     },
+    can(){
+       this.show=false
+    },
     del(){
         this.show=true
     },
     dele(){
         this.show=false
+        let params={
+            id: this.id
+        }
+        this.$http.post(this.$api.del,params).then(data=>{
+            if(data.data.status===0){
+                this.$router.push('/address')
+            }
+        })
     }
   }
 }

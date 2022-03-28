@@ -47,13 +47,23 @@
 export default {
   data(){
     return{
-        show:false,
+        show:true,
         list:[1,1,1,1,1],
         lists:[1,1,1,1,1,1,1,1,1,1,11,1,1],
         sec:false
     }
   },
+  mounted(){
+    if(this.$store.state.id){
+        this.getorder()
+        this.show=false
+    }
+    
+  },
   methods:{
+    getorder(){
+         
+    },
     gologin(){
       this.$router.push('login')
     },

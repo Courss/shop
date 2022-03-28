@@ -1,7 +1,7 @@
 <template>
   <div class="all">
       <navbar title="收货地址" :showarrow="true" :menuColor="false"/>
-      <div class="top" v-for="item in list">
+      <div class="top" v-for="(item,index) in list" :key="index">
          <div class="content">
           <div class="left">
               <div class="title">
@@ -12,7 +12,7 @@
                   <span>{{item.phone}}</span>
               </div>
           </div>
-          <div class="right" @click="">
+          <div class="right" @click="change(item)">
               <i class="el-icon-edit-outline"></i>
           </div>
       </div>  
@@ -41,6 +41,18 @@ methods:{
             return
         }
         this.$router.push('/addList')
+    },
+    change(id){
+        if(!this.$store.state.id){
+            this.$router.push('/login')
+            return
+        }
+        this.$router.push({
+          path: '/addList',
+          query: {
+            id: id
+          }
+        })
     },
     showAdd(){
         let params={

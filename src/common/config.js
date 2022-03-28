@@ -6,11 +6,15 @@ module.exports={
         assetsPublicPath: '/',
     proxyTable: {
       '/api': { // 匹配所有以 '/api'开头的请求路径
-        target: 'http://localhost:3007', // 代理目标的基础路径
+        target: 'http://127.0.0.1:3007', // 代理目标的基础路径
         changeOrigin: true, // 支持跨域
       },
       '/my':{
-        target: 'http://localhost:3007', // 代理目标的基础路径
+        target: 'http://127.0.0.1:3007', // 代理目标的基础路径
+        changeOrigin: true, // 支持跨域
+      },
+      '/location':{
+        target: 'http://127.0.0.1:3007', // 代理目标的基础路径
         changeOrigin: true, // 支持跨域
       }
     },

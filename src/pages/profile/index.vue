@@ -93,6 +93,10 @@ export default {
            this.$router.push('/order')
        },
        goShop(){
+         if(!this.$store.state.id){
+           this.$router.push('/login')
+           return
+         }
          this.$router.push('/collection')
        },
        toVip(){
