@@ -10,7 +10,7 @@
                   <div class="third"><span>续费每月得六张</span></div>
               </div>
               <div class="fouth">
-                  <span>2022.04.11到期</span><span style="color:#fff" class="spec">去续费</span>
+                  <span>2022.04.11到期</span><span style="color:#fff" class="spec" @click="conPay">去续费</span>
               </div>
           </div>
       </div>
@@ -69,17 +69,83 @@ export default {
     data(){
         return{
            show:false,
-           sec:false
+           sec:false,
+           last:'',
+           list:''
         }
+    },
+    mounted(){
+        this.requireVip()
     },
     methods:{
         topay(){
           this.sec=true
         },
+        getTime(num){
+            if(num){
+                var date=num
+            }else var date=new Date()
+          var year=date.getFullYear()
+          var month=date.getMonth()+1
+          var day=date.getDate()
+          var days = new Date(year, month, 0)  
+            days = days.getDate() //获取当前日期中的月的天数  
+            var year2 = year  
+            var month2 = parseInt(month) + 1 
+            if (month2 == 13) {  
+                year2 = parseInt(year2) + 1  
+                month2 = 1 
+            }  
+            var day2 = day 
+            var days2 = new Date(year2, month2, 0)  
+            days2 = days2.getDate(); 
+            if (day2 > days2) {  
+                day2 = days2  
+            }  
+            if (month2 < 10) {  
+                month2 = '0' + month2  
+            }  
+          
+            this.last = year2 + '-' + month2 + '-' + day2     
+        },
         tovip(){
+           this.getTime()
+            if(this.$store.state.id){
+                let params={
+                id: this.$store.state.id,
+                num: 6,
+                data: this.last
+            }
+            this.$http.post(this.$api.addvip,params).then(data=>{
+                   if(data.data){
+                       this.requireVip()
+                   }
+            })
+            }
             this.show=true
             this.sec=false
         },
+        requireVip(){
+          let params={
+              id: this.$store.state.id
+          }
+          this.$http.post(this.$api.vip.params).then(data=>{
+              if(data.data){
+            this.list=data.data.data
+              }
+          })
+        },
+        conPay(){
+           this.getTime(new Date(this.list.time))
+           let params={
+               num: this.list.num+6,
+               data: this.last,
+               id: this.$store.state.id
+           }
+           this.$http.post(this.$api.upVip,params).then(data=>{
+               
+           })
+        }
     }
 }
 </script>
